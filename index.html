@@ -10,34 +10,18 @@
     }
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-family: sans-serif;
       background: #f9f9f9;
-      line-height: 1.5;
-      color: #333;
-      padding: 0 10px;
-    }
-
-    header {
-      text-align: center;
-      padding: 20px 0;
-      margin-bottom: 20px;
-    }
-
-    header h1 {
-      margin: 0;
-      color: #1a5276;
     }
 
     .bar {
       width: 100%;
-      margin: 15px auto;
-      background: #f1f1f1;
-      border-radius: 8px;
+      margin: 10px auto;
+      background: #ddd;
+      border-radius: 5px;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: all 0.5s ease;
       position: relative;
-      overflow: hidden;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
     .bar.expanded {
@@ -46,20 +30,9 @@
 
     .bar-title {
       text-align: center;
-      padding: 12px;
+      padding: 10px;
       font-weight: bold;
       background: #bbb;
-      transition: background 0.3s ease;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .bar-title .count {
-      background: white;
-      border-radius: 20px;
-      padding: 2px 8px;
-      font-size: 0.8em;
     }
 
     /* Color themes for bars */
@@ -68,10 +41,6 @@
     .bar:nth-child(5n+3) .bar-title { background: #FFDAC1; }
     .bar:nth-child(5n+4) .bar-title { background: #E2F0CB; }
     .bar:nth-child(5n+5) .bar-title { background: #B5EAD7; }
-
-    .bar:hover .bar-title {
-      filter: brightness(1.05);
-    }
 
     .stickers-container {
       width: 100%;
@@ -101,8 +70,8 @@
       min-width: 100px;
       max-width: 300px;
       border: 2px dashed #ccc;
-      border-radius: 8px;
-      padding: 15px;
+      border-radius: 4px;
+      padding: 10px;
       box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
       transform: rotate(var(--rotation));
       cursor: move;
@@ -110,18 +79,6 @@
       white-space: normal;
       overflow-wrap: break-word;
       font-size: 14px;
-      transition: box-shadow 0.2s ease, transform 0.1s ease;
-    }
-
-    .sticker:hover {
-      box-shadow: 3px 3px 10px rgba(0,0,0,0.15);
-      z-index: 10;
-    }
-
-    .sticker.dragging {
-      box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
-      z-index: 100;
-      opacity: 0.9;
     }
 
     /* Color themes for stickers */
@@ -142,121 +99,50 @@
       border-radius: 50%;
     }
 
-    .sticker .reference {
-      font-style: italic;
-      font-size: 0.9em;
-      text-align: right;
-      margin-top: 8px;
-      opacity: 0.7;
-    }
-
-    .sticker .delete-btn {
-      position: absolute;
-      top: 5px;
-      right: 5px;
-      background: rgba(255,255,255,0.7);
-      border-radius: 50%;
-      width: 20px;
-      height: 20px;
-      text-align: center;
-      line-height: 18px;
-      font-size: 12px;
-      cursor: pointer;
-      opacity: 0;
-      transition: opacity 0.2s;
-    }
-
-    .sticker:hover .delete-btn {
-      opacity: 1;
-    }
-
     .input-form {
       max-width: 600px;
       margin: 20px auto;
       padding: 20px;
       background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
     .input-form label {
       display: block;
       margin-bottom: 5px;
-      font-weight: 600;
-      color: #333;
+      font-weight: bold;
     }
 
-    .input-form input, .input-form textarea {
+    .input-form input {
       width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      font-size: 14px;
-    }
-
-    .input-form textarea {
-      min-height: 80px;
-      resize: vertical;
-    }
-
-    .input-form .reference-input {
-      width: 100%;
-      padding: 6px;
-      margin-top: 5px;
-      border: 1px solid #ddd;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
       border-radius: 4px;
     }
 
-    .button-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 15px;
-    }
-
-    .btn {
-      padding: 10px 15px;
+    .input-form button {
+      padding: 10px 20px;
       background: #4CAF50;
       color: white;
       border: none;
       border-radius: 4px;
       cursor: pointer;
-      transition: background 0.2s;
-      font-weight: 500;
+      margin: 5px 5px 5px 0;
     }
 
-    .btn-primary {
-      background: #4CAF50;
+    .input-form button:hover {
+      background: #45a049;
     }
 
-    .btn-secondary {
-      background: #2196F3;
-    }
-
-    .btn-danger {
-      background: #f44336;
-    }
-
-    .btn:hover {
-      filter: brightness(1.1);
-    }
-
-    .btn:disabled {
+    .input-form button:disabled {
       background: #cccccc;
       cursor: not-allowed;
     }
 
     .sticker-input {
-      margin-bottom: 15px;
-      padding: 10px;
-      border: 1px solid #eee;
-      border-radius: 5px;
-      background: #f9f9f9;
-    }
-
-    .sticker-input:nth-child(odd) {
-      background: #f5f5f5;
+      margin-bottom: 10px;
     }
 
     .close-btn {
@@ -274,11 +160,6 @@
       justify-content: center;
       border-radius: 50%;
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-      transition: background 0.2s;
-    }
-
-    .close-btn:hover {
-      background: #f0f0f0;
     }
 
     .search-container {
@@ -290,128 +171,13 @@
 
     .search-container input {
       flex-grow: 1;
-      padding: 10px 15px;
-      border: 1px solid #ddd;
+      padding: 10px;
+      border: 1px solid #ccc;
       border-radius: 4px;
-      font-size: 14px;
     }
 
     .highlight {
-      background-color: yellow !important;
-    }
-
-    .controls-container {
-      display: flex;
-      justify-content: space-between;
-      max-width: 600px;
-      margin: 15px auto;
-    }
-
-    .export-btn, .import-btn {
-      padding: 8px 12px;
-      background: #333;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 14px;
-    }
-
-    .export-btn:hover, .import-btn:hover {
-      background: #555;
-    }
-
-    .input-file {
-      display: none;
-    }
-
-    .import-label {
-      padding: 8px 12px;
-      background: #333;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 14px;
-    }
-
-    .import-label:hover {
-      background: #555;
-    }
-
-    .modal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.7);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1100;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s, visibility 0.3s;
-    }
-
-    .modal.visible {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .modal-content {
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      width: 90%;
-      max-width: 500px;
-      max-height: 80vh;
-      overflow: auto;
-    }
-
-    .modal-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 15px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid #eee;
-    }
-
-    .modal-header h2 {
-      margin: 0;
-      font-size: 1.5em;
-    }
-
-    .modal-close {
-      background: none;
-      border: none;
-      font-size: 1.5em;
-      cursor: pointer;
-    }
-
-    .toast {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      padding: 10px 20px;
-      background: #333;
-      color: white;
-      border-radius: 4px;
-      opacity: 0;
-      transition: opacity 0.3s;
-      z-index: 1200;
-    }
-
-    .toast.visible {
-      opacity: 1;
-    }
-
-    .drag-over {
-      border: 2px dashed #4CAF50 !important;
-      background-color: rgba(76, 175, 80, 0.1) !important;
+      background-color: yellow;
     }
 
     @media (max-width: 768px) {
@@ -424,12 +190,6 @@
         margin: 10px;
         padding: 10px;
       }
-      .button-container {
-        flex-direction: column;
-      }
-      .btn {
-        width: 100%;
-      }
     }
 
     @media (max-width: 480px) {
@@ -437,31 +197,17 @@
         min-width: 60px;
         max-width: 200px;
         font-size: 10px;
-        padding: 10px;
-      }
-      .bar-title {
-        font-size: 14px;
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Bible Quotes Collection</h1>
-  </header>
+  <h1 style="text-align:center">Bible Quotes Collection</h1>
   
   <div class="search-container">
     <input type="text" id="search-input" placeholder="Search topics and quotes..." />
-    <button class="btn btn-secondary" onclick="searchTopics()">Search</button>
-    <button class="btn" onclick="clearSearch()">Clear</button>
-  </div>
-
-  <div class="controls-container">
-    <button class="export-btn" onclick="exportData()">Export Data</button>
-    <label class="import-label">
-      Import Data
-      <input type="file" id="import-file" class="input-file" accept=".json" onchange="importData(this)">
-    </label>
+    <button onclick="searchTopics()">Search</button>
+    <button onclick="clearSearch()">Clear</button>
   </div>
   
   <div class="input-form">
@@ -470,139 +216,67 @@
     <div id="stickers-inputs">
       <!-- Dynamic fields for stickers -->
     </div>
-    <div class="button-container">
-      <button class="btn btn-secondary" onclick="addStickerInput()">Add Bible quote</button>
-      <button class="btn btn-primary" onclick="addTopic()">Add Topic</button>
-      <button class="btn" onclick="clearForm()">Clear Form</button>
-    </div>
+    <button onclick="addStickerInput()">Add Bible quote</button>
+    <button onclick="addTopic()">Add Topic</button>
+    <button onclick="clearForm()">Clear Form</button>
   </div>
   
   <div id="pyramid"></div>
-
-  <div id="edit-modal" class="modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2>Edit Quote</h2>
-        <button class="modal-close" onclick="closeModal()">×</button>
-      </div>
-      <div class="modal-body">
-        <label for="edit-quote">Quote:</label>
-        <textarea id="edit-quote"></textarea>
-        <label for="edit-reference">Reference (optional):</label>
-        <input type="text" id="edit-reference" placeholder="e.g. John 3:16">
-        <div class="button-container">
-          <button class="btn btn-primary" onclick="saveQuoteEdit()">Save</button>
-          <button class="btn" onclick="closeModal()">Cancel</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="toast" class="toast"></div>
 
   <script>
     // Initialize with one sticker input
     document.addEventListener('DOMContentLoaded', function() {
       addStickerInput();
       loadTopics();
-      setupDragAndDrop();
     });
 
-    // Global variables
     const pyramid = document.getElementById('pyramid');
     const stickersInputsContainer = document.getElementById('stickers-inputs');
-    const editModal = document.getElementById('edit-modal');
-    const toast = document.getElementById('toast');
-    let currentEditingSticker = null;
-    let currentEditingTopic = null;
 
-    // Add a sticker input field with reference field
     function addStickerInput() {
       const stickerInputDiv = document.createElement('div');
       stickerInputDiv.className = 'sticker-input';
 
       const label = document.createElement('label');
       label.textContent = `Quote ${stickersInputsContainer.children.length + 1}:`;
-      
-      const textarea = document.createElement('textarea');
-      textarea.placeholder = 'Enter Bible quote';
-      textarea.className = 'sticker-input-field';
-
-      const referenceLabel = document.createElement('label');
-      referenceLabel.textContent = 'Reference (optional):';
-      referenceLabel.style.marginTop = '5px';
-      referenceLabel.style.fontSize = '0.9em';
-      
-      const referenceInput = document.createElement('input');
-      referenceInput.type = 'text';
-      referenceInput.placeholder = 'e.g. John 3:16';
-      referenceInput.className = 'reference-input';
+      const input = document.createElement('input');
+      input.type = 'text';
+      input.placeholder = 'Enter Bible quote';
+      input.className = 'sticker-input-field';
 
       stickerInputDiv.appendChild(label);
-      stickerInputDiv.appendChild(textarea);
-      stickerInputDiv.appendChild(referenceLabel);
-      stickerInputDiv.appendChild(referenceInput);
+      stickerInputDiv.appendChild(input);
       stickersInputsContainer.appendChild(stickerInputDiv);
     }
 
-    // Add a topic with quotes
     function addTopic() {
       const topicNameInput = document.getElementById('topic-name');
       const topicName = topicNameInput.value.trim();
 
       if (!topicName) {
-        showToast('Please enter topic name');
+        alert('Please enter topic name.');
         return;
       }
 
-      // Collect all quotes with references
-      const stickerInputs = stickersInputsContainer.querySelectorAll('.sticker-input');
+      // Collect all quotes
+      const stickerInputs = stickersInputsContainer.querySelectorAll('.sticker-input-field');
       const stickers = Array.from(stickerInputs)
-        .map(input => {
-          const quoteText = input.querySelector('.sticker-input-field').value.trim();
-          const reference = input.querySelector('.reference-input').value.trim();
-          
-          if (quoteText) {
-            return { text: quoteText, reference: reference };
-          }
-          return null;
-        })
-        .filter(Boolean);
+        .map(input => input.value.trim())
+        .filter(value => value);
 
       if (stickers.length === 0) {
-        showToast('Please add at least one quote');
+        alert('Please add at least one quote.');
         return;
       }
 
       // Create bar
-      const bar = createTopicBar(topicName, stickers);
-      pyramid.appendChild(bar);
-      saveTopics();
-
-      // Clear form
-      clearForm();
-      showToast('Topic added successfully');
-    }
-
-    // Create a topic bar
-    function createTopicBar(topicName, stickers) {
       const bar = document.createElement('div');
       bar.className = 'bar';
       bar.dataset.expanded = 'false';
-      bar.dataset.name = topicName;
 
       const title = document.createElement('div');
       title.className = 'bar-title';
-      
-      const titleText = document.createElement('span');
-      titleText.textContent = topicName;
-      
-      const count = document.createElement('span');
-      count.className = 'count';
-      count.textContent = stickers.length;
-      
-      title.appendChild(titleText);
-      title.appendChild(count);
+      title.textContent = `${topicName} (${stickers.length})`;
       bar.appendChild(title);
 
       const stickersContainer = document.createElement('div');
@@ -612,18 +286,9 @@
       title.addEventListener('click', () => {
         const isExpanded = bar.dataset.expanded === 'true';
         if (!isExpanded) {
-          // Close any other expanded bars
-          document.querySelectorAll('.bar.expanded').forEach(expandedBar => {
-            if (expandedBar !== bar) {
-              expandedBar.classList.remove('expanded');
-              expandedBar.dataset.expanded = 'false';
-              expandedBar.querySelector('.stickers-container').innerHTML = '';
-            }
-          });
-          
           bar.classList.add('expanded');
           if (!stickersContainer.hasChildNodes()) {
-            createStickers(stickersContainer, stickers, topicName);
+            createStickers(stickersContainer, stickers);
             requestAnimationFrame(() => layoutStickers(stickersContainer));
           }
         } else {
@@ -633,87 +298,14 @@
         bar.dataset.expanded = (!isExpanded).toString();
       });
 
-      // Add right-click menu for topic
-      bar.addEventListener('contextmenu', function(e) {
-        e.preventDefault();
-        currentEditingTopic = bar;
-        
-        // Create context menu
-        const menu = document.createElement('div');
-        menu.className = 'context-menu';
-        menu.style.position = 'absolute';
-        menu.style.left = `${e.pageX}px`;
-        menu.style.top = `${e.pageY}px`;
-        menu.style.background = 'white';
-        menu.style.border = '1px solid #ccc';
-        menu.style.borderRadius = '4px';
-        menu.style.padding = '5px 0';
-        menu.style.boxShadow = '0 2px 5px rgba(0,0,0,0.2)';
-        menu.style.zIndex = '1000';
-        
-        const editOption = document.createElement('div');
-        editOption.textContent = 'Edit Topic';
-        editOption.style.padding = '8px 12px';
-        editOption.style.cursor = 'pointer';
-        editOption.addEventListener('mouseover', () => {
-          editOption.style.background = '#f0f0f0';
-        });
-        editOption.addEventListener('mouseout', () => {
-          editOption.style.background = 'white';
-        });
-        editOption.addEventListener('click', () => {
-          const newName = prompt('Edit topic name:', topicName);
-          if (newName && newName.trim() !== '') {
-            titleText.textContent = newName.trim();
-            bar.dataset.name = newName.trim();
-            saveTopics();
-            showToast('Topic renamed');
-          }
-          document.body.removeChild(menu);
-        });
-        
-        const deleteOption = document.createElement('div');
-        deleteOption.textContent = 'Delete Topic';
-        deleteOption.style.padding = '8px 12px';
-        deleteOption.style.cursor = 'pointer';
-        deleteOption.style.color = '#f44336';
-        deleteOption.addEventListener('mouseover', () => {
-          deleteOption.style.background = '#f0f0f0';
-        });
-        deleteOption.addEventListener('mouseout', () => {
-          deleteOption.style.background = 'white';
-        });
-        deleteOption.addEventListener('click', () => {
-          if (confirm(`Are you sure you want to delete the topic "${topicName}"?`)) {
-            pyramid.removeChild(bar);
-            saveTopics();
-            showToast('Topic deleted');
-          }
-          document.body.removeChild(menu);
-        });
-        
-        menu.appendChild(editOption);
-        menu.appendChild(deleteOption);
-        document.body.appendChild(menu);
-        
-        // Remove menu when clicking elsewhere
-        const removeMenu = function() {
-          if (document.body.contains(menu)) {
-            document.body.removeChild(menu);
-          }
-          document.removeEventListener('click', removeMenu);
-        };
-        
-        setTimeout(() => {
-          document.addEventListener('click', removeMenu);
-        }, 100);
-      });
+      pyramid.appendChild(bar);
+      saveTopics();
 
-      return bar;
+      // Clear form but don't disable
+      clearForm();
     }
 
-    // Create stickers in the container
-    function createStickers(container, stickers, topicName) {
+    function createStickers(container, stickers) {
       // Add close button
       const closeBtn = document.createElement('div');
       closeBtn.className = 'close-btn';
@@ -729,71 +321,13 @@
       });
       container.appendChild(closeBtn);
 
-      // Add topic title at the top
-      const topicTitle = document.createElement('h2');
-      topicTitle.style.textAlign = 'center';
-      topicTitle.style.margin = '10px 0 30px';
-      topicTitle.style.width = '100%';
-      topicTitle.style.color = '#333';
-      topicTitle.textContent = topicName;
-      container.appendChild(topicTitle);
-
       // Create stickers
       stickers.forEach((quote, i) => {
         const sticker = document.createElement('div');
         sticker.className = 'sticker';
-        sticker.innerHTML = quote.text;
-        
-        // Add reference if available
-        if (quote.reference) {
-          const referenceSpan = document.createElement('div');
-          referenceSpan.className = 'reference';
-          referenceSpan.textContent = quote.reference;
-          sticker.appendChild(referenceSpan);
-        }
-        
-        // Add delete button
-        const deleteBtn = document.createElement('span');
-        deleteBtn.className = 'delete-btn';
-        deleteBtn.textContent = '×';
-        deleteBtn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          if (confirm('Delete this quote?')) {
-            sticker.remove();
-            saveTopics();
-            
-            // Update count
-            const bar = container.closest('.bar');
-            if (bar) {
-              const countEl = bar.querySelector('.count');
-              countEl.textContent = bar.querySelectorAll('.sticker').length;
-            }
-            
-            showToast('Quote deleted');
-          }
-        });
-        sticker.appendChild(deleteBtn);
-        
+        sticker.textContent = quote;
         sticker.style.setProperty('--rotation', `${(Math.random() * 10 - 5)}deg`);
         container.appendChild(sticker);
-        
-        // Double click to edit
-        sticker.addEventListener('dblclick', (e) => {
-          e.stopPropagation();
-          currentEditingSticker = sticker;
-          
-          // Set current values in the modal
-          const quoteText = sticker.childNodes[0].nodeValue || '';
-          const referenceEl = sticker.querySelector('.reference');
-          const reference = referenceEl ? referenceEl.textContent : '';
-          
-          document.getElementById('edit-quote').value = quoteText;
-          document.getElementById('edit-reference').value = reference;
-          
-          // Show modal
-          editModal.classList.add('visible');
-        });
-        
         requestAnimationFrame(() => {
           if (document.body.contains(sticker)) {
             makeDraggable(sticker);
@@ -802,11 +336,10 @@
       });
     }
 
-    // Layout stickers in the container
     function layoutStickers(container) {
       if (document.visibilityState !== 'visible') return;
 
-      const stickers = container.querySelectorAll('.sticker');
+      const stickers = container.querySelectorAll('.sticker:not(.close-btn)');
       const width = container.offsetWidth;
       const cols = Math.max(1, Math.floor(width / 320));
 
@@ -820,17 +353,16 @@
 
         const stickerWidth = sticker.offsetWidth;
         const x = col * (stickerWidth + 20) + offsetX;
-        const y = row * 150 + 80; // +80 to account for close button and title
+        const y = row * 120 + 40; // +40 to account for close button
 
         sticker.style.left = `${x}px`;
         sticker.style.top = `${y}px`;
       });
 
       const rows = Math.ceil(stickers.length / cols);
-      container.style.minHeight = `${rows * 150 + 80}px`;
+      container.style.minHeight = `${rows * 130 + 40}px`;
     }
 
-    // Make an element draggable
     function makeDraggable(el) {
       if (!el) return;
 
@@ -838,22 +370,16 @@
       let shiftX, shiftY;
 
       function onMouseDown(e) {
-        if (e.target.classList.contains('close-btn') || e.target.classList.contains('delete-btn')) return;
+        if (e.target.classList.contains('close-btn')) return;
         
         const rect = el.getBoundingClientRect();
         if (!rect) return;
         shiftX = e.clientX - rect.left;
         shiftY = e.clientY - rect.top;
         isDragging = true;
-        
-        el.classList.add('dragging');
 
         document.addEventListener('mousemove', onMouseMove);
         document.addEventListener('mouseup', onMouseUp, { once: true });
-        
-        // Touch support
-        el.addEventListener('touchmove', onTouchMove);
-        el.addEventListener('touchend', onTouchEnd, { once: true });
       }
 
       function onMouseMove(e) {
@@ -872,63 +398,19 @@
         el.style.left = `${x}px`;
         el.style.top = `${y}px`;
       }
-      
-      function onTouchMove(e) {
-        if (!isDragging || e.touches.length !== 1) return;
-        
-        const touch = e.touches[0];
-        
-        const container = el.parentElement;
-        if (!container || !document.body.contains(container)) {
-          stopDragging();
-          return;
-        }
-
-        const bounds = container.getBoundingClientRect();
-        const x = Math.min(Math.max(0, touch.pageX - bounds.left - shiftX), bounds.width - el.offsetWidth);
-        const y = Math.min(Math.max(0, touch.pageY - bounds.top - shiftY), bounds.height - el.offsetHeight);
-
-        el.style.left = `${x}px`;
-        el.style.top = `${y}px`;
-        
-        e.preventDefault(); // Prevent scrolling while dragging
-      }
 
       function onMouseUp() {
         stopDragging();
-      }
-      
-      function onTouchEnd() {
-        stopDragging();
-        el.removeEventListener('touchmove', onTouchMove);
       }
 
       function stopDragging() {
         if (!isDragging) return;
         isDragging = false;
-        el.classList.remove('dragging');
         document.removeEventListener('mousemove', onMouseMove);
         document.removeEventListener('mouseup', onMouseUp);
-        
-        // Save the position
-        saveTopics();
       }
 
       el.addEventListener('mousedown', onMouseDown);
-      el.addEventListener('touchstart', function(e) {
-        if (e.touches.length === 1) {
-          const touch = e.touches[0];
-          const rect = el.getBoundingClientRect();
-          if (!rect) return;
-          shiftX = touch.clientX - rect.left;
-          shiftY = touch.clientY - rect.top;
-          isDragging = true;
-          el.classList.add('dragging');
-          
-          e.preventDefault(); // Prevent default touch actions
-        }
-      });
-      
       el.ondragstart = () => false;
 
       document.addEventListener('visibilitychange', () => {
@@ -938,104 +420,29 @@
       });
     }
 
-    // Close modal
-    function closeModal() {
-      editModal.classList.remove('visible');
-      currentEditingSticker = null;
-    }
-
-    // Save edited quote
-    function saveQuoteEdit() {
-      if (!currentEditingSticker) return;
-      
-      const quoteText = document.getElementById('edit-quote').value.trim();
-      const reference = document.getElementById('edit-reference').value.trim();
-      
-      if (!quoteText) {
-        showToast('Quote text cannot be empty');
-        return;
-      }
-      
-      // Update sticker content
-      currentEditingSticker.innerHTML = quoteText;
-      
-      // Add reference if provided
-      if (reference) {
-        const referenceEl = document.createElement('div');
-        referenceEl.className = 'reference';
-        referenceEl.textContent = reference;
-        currentEditingSticker.appendChild(referenceEl);
-      }
-      
-      // Add delete button back
-      const deleteBtn = document.createElement('span');
-      deleteBtn.className = 'delete-btn';
-      deleteBtn.textContent = '×';
-      deleteBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        if (confirm('Delete this quote?')) {
-          currentEditingSticker.remove();
-          saveTopics();
-          
-          // Update count
-          const bar = currentEditingSticker.closest('.bar');
-          if (bar) {
-            const countEl = bar.querySelector('.count');
-            countEl.textContent = bar.querySelectorAll('.sticker').length;
-          }
-          
-          showToast('Quote deleted');
-        }
-      });
-      currentEditingSticker.appendChild(deleteBtn);
-      
-      closeModal();
-      saveTopics();
-      showToast('Quote updated');
-    }
-
     // Save and load topics from localStorage
     function saveTopics() {
       const topics = [];
       document.querySelectorAll('.bar').forEach(bar => {
-        const topicName = bar.dataset.name;
-        const isExpanded = bar.dataset.expanded === 'true';
+        const title = bar.querySelector('.bar-title').textContent;
+        const stickerCount = parseInt(title.match(/\((\d+)\)/)?.[1]) || 0;
+        const topicName = title.replace(/\s*\(\d+\)$/, '');
         
-        // Get quotes from DOM if expanded, otherwise from stored data
+        // Get quotes from DOM or from initial creation
         let quotes = [];
-        
-        if (isExpanded) {
-          const stickers = bar.querySelectorAll('.sticker');
-          quotes = Array.from(stickers).map(s => {
-            const text = s.childNodes[0].nodeValue || '';
-            const referenceEl = s.querySelector('.reference');
-            const reference = referenceEl ? referenceEl.textContent : '';
-            
-            // Save position data
-            const style = s.style;
-            const position = {
-              left: style.left,
-              top: style.top,
-              rotation: s.style.getPropertyValue('--rotation')
-            };
-            
-            return { text, reference, position };
-          });
+        const stickers = bar.querySelectorAll('.sticker');
+        if (stickers.length > 0) {
+          quotes = Array.from(stickers).map(s => s.textContent);
         } else {
-          // Try to find existing data for this topic
-          const savedTopics = JSON.parse(localStorage.getItem('bibleTopics') || '[]');
-          const savedTopic = savedTopics.find(t => t.title === topicName);
-          if (savedTopic) {
-            quotes = savedTopic.quotes;
-          }
+          // For topics that haven't been expanded yet
+          quotes = Array(stickerCount).fill('Quote not loaded yet');
         }
         
         topics.push({
           title: topicName,
-          quotes: quotes
+          stickers: quotes
         });
       });
-      
       localStorage.setItem('bibleTopics', JSON.stringify(topics));
     }
 
@@ -1044,12 +451,38 @@
       if (saved) {
         try {
           JSON.parse(saved).forEach(topic => {
-            const bar = createTopicBar(topic.title, topic.quotes);
+            const bar = document.createElement('div');
+            bar.className = 'bar';
+            bar.dataset.expanded = 'false';
+
+            const title = document.createElement('div');
+            title.className = 'bar-title';
+            title.textContent = `${topic.title} (${topic.stickers.length})`;
+            bar.appendChild(title);
+
+            const stickersContainer = document.createElement('div');
+            stickersContainer.className = 'stickers-container';
+            bar.appendChild(stickersContainer);
+
+            title.addEventListener('click', () => {
+              const isExpanded = bar.dataset.expanded === 'true';
+              if (!isExpanded) {
+                bar.classList.add('expanded');
+                if (!stickersContainer.hasChildNodes()) {
+                  createStickers(stickersContainer, topic.stickers);
+                  requestAnimationFrame(() => layoutStickers(stickersContainer));
+                }
+              } else {
+                bar.classList.remove('expanded');
+                stickersContainer.innerHTML = '';
+              }
+              bar.dataset.expanded = (!isExpanded).toString();
+            });
+
             pyramid.appendChild(bar);
           });
         } catch (e) {
           console.error('Failed to load saved topics:', e);
-          showToast('Error loading saved topics');
         }
       }
     }
@@ -1101,13 +534,13 @@
             const stickersContainer = bar.querySelector('.stickers-container');
             stickersContainer.innerHTML = '';
             
-            // Get the quotes from saved data
-            const topicTitle = bar.dataset.name;
+            // Need to get the actual quotes - this is simplified
+            const topicTitle = title.textContent.replace(/\s*\(\d+\)$/, '');
             const savedTopics = JSON.parse(localStorage.getItem('bibleTopics') || '[]');
             const topic = savedTopics.find(t => t.title === topicTitle);
             
             if (topic) {
-              createStickers(stickersContainer, topic.quotes, topicTitle);
+              createStickers(stickersContainer, topic.stickers);
               layoutStickers(stickersContainer);
               
               // Highlight matching stickers after they're created
@@ -1126,7 +559,7 @@
       });
       
       if (!found) {
-        showToast('No matching topics or quotes found');
+        alert('No matching topics or quotes found.');
       }
     }
 
@@ -1146,120 +579,6 @@
       addStickerInput(); // Add one empty input
     }
 
-    // Export data functionality
-    function exportData() {
-      try {
-        const data = localStorage.getItem('bibleTopics');
-        if (!data) {
-          showToast('No data to export');
-          return;
-        }
-        
-        const blob = new Blob([data], { type: 'application/json' });
-        const url = URL.createObjectURL(blob);
-        
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = `bible-quotes-${new Date().toISOString().slice(0, 10)}.json`;
-        document.body.appendChild(a);
-        a.click();
-        
-        setTimeout(() => {
-          document.body.removeChild(a);
-          URL.revokeObjectURL(url);
-        }, 100);
-        
-        showToast('Data exported successfully');
-      } catch (e) {
-        console.error('Export failed:', e);
-        showToast('Export failed');
-      }
-    }
-
-    // Import data functionality
-    function importData(input) {
-      const file = input.files[0];
-      if (!file) return;
-      
-      const reader = new FileReader();
-      
-      reader.onload = function(e) {
-        try {
-          const data = JSON.parse(e.target.result);
-          
-          if (confirm('Importing will replace all your current data. Continue?')) {
-            localStorage.setItem('bibleTopics', JSON.stringify(data));
-            pyramid.innerHTML = '';
-            loadTopics();
-            showToast('Data imported successfully');
-          }
-        } catch (e) {
-          console.error('Import failed:', e);
-          showToast('Invalid file format');
-        }
-        
-        // Clear file input
-        input.value = '';
-      };
-      
-      reader.readAsText(file);
-    }
-
-    // Show toast message
-    function showToast(message, duration = 3000) {
-      toast.textContent = message;
-      toast.classList.add('visible');
-      
-      setTimeout(() => {
-        toast.classList.remove('visible');
-      }, duration);
-    }
-
-    // Setup drag and drop for file import
-    function setupDragAndDrop() {
-      const dropZone = document.documentElement;
-      
-      ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-        dropZone.addEventListener(eventName, preventDefaults, false);
-      });
-      
-      function preventDefaults(e) {
-        e.preventDefault();
-        e.stopPropagation();
-      }
-      
-      ['dragenter', 'dragover'].forEach(eventName => {
-        dropZone.addEventListener(eventName, highlight, false);
-      });
-      
-      ['dragleave', 'drop'].forEach(eventName => {
-        dropZone.addEventListener(eventName, unhighlight, false);
-      });
-      
-      function highlight() {
-        document.body.classList.add('drag-over');
-      }
-      
-      function unhighlight() {
-        document.body.classList.remove('drag-over');
-      }
-      
-      dropZone.addEventListener('drop', handleDrop, false);
-      
-      function handleDrop(e) {
-        const dt = e.dataTransfer;
-        const files = dt.files;
-        
-        if (files.length === 1 && files[0].type === 'application/json') {
-          const fileInput = document.getElementById('import-file');
-          fileInput.files = dt.files;
-          importData(fileInput);
-        } else {
-          showToast('Please drop a valid JSON file');
-        }
-      }
-    }
-
     // Handle window resize
     let resizeTimeout;
     window.addEventListener('resize', () => {
@@ -1271,4 +590,4 @@
     });
   </script>
 </body>
-</html>  
+</html>
